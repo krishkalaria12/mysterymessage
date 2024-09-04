@@ -138,7 +138,7 @@ function SignIn() {
               href={"/sign-up"}
               className="text-blue-500 hover:text-blue-800"
             >
-              Sign In
+              Sign Up
             </Link>
           </p>
         </div>

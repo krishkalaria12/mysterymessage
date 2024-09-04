@@ -45,7 +45,7 @@ export async function GET(request: Request){
             },
         ])
 
-        if (!user || user.length==0) {
+        if (!user) {
             return Response.json({
                 message: "User not found",
                 success: false
@@ -55,7 +55,7 @@ export async function GET(request: Request){
         return Response.json({
             messages: user[0].messages,
             success: true
-        }, {status: 401})
+        }, {status: 200})
     } catch (error) {
         console.log("Unexpected Error Occurred: ", error);
         
@@ -64,6 +64,4 @@ export async function GET(request: Request){
             success: false
         }, {status: 500})
     }
-
-
 }

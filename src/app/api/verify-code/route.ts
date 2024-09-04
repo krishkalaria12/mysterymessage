@@ -1,7 +1,7 @@
 import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/User";
 
-export async function GET(request: Request){
+export async function POST(request: Request){
     await dbConnect()
 
     try {
@@ -31,7 +31,7 @@ export async function GET(request: Request){
                     success: true,
                     message: "Verification Successful",
                 },
-                {status: 500}
+                {status: 200}
             )
         } else if (!isCodeNotExpired) {
             return Response.json(
